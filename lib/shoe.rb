@@ -1,14 +1,25 @@
+require 'pry'
+
 class Shoe
   attr_accessor :color, :size, :material, :condition
   attr_reader :brand
+  
+  BRAND = []
 
   def initialize(brand)
     @brand = brand
+    @@brand << self.brand 
   end
+
+  # def brand
+  #   if @brand.uniq
+  #     BRAND << @brand 
+  #   end   
+  # end 
 
   def cobble
     self.condition = "new"
     puts "Your shoe is as good as new!"
-  end
+  end  
 
 end
